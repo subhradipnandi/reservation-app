@@ -11,11 +11,15 @@ import com.reservationapp.repository.RouteRepository;
 import com.reservationapp.repository.SubRouteRepository;
 import com.reservationapp.service.ReservationService;
 import com.reservationapp.util.EmailService;
+import com.reservationapp.util.ExcelService;
 import com.reservationapp.util.PdfTicketGeneratorService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -41,6 +45,9 @@ public class ReservationServiceImpl implements ReservationService {
 
     @Autowired
     private EmailService emailService;
+
+    @Autowired
+    private ExcelService excelService;
 
     @Override
     public String bookTicket(long busId, long routeId, PassengerDto passengerDto) {
@@ -86,4 +93,5 @@ public class ReservationServiceImpl implements ReservationService {
 
         return "done!!";
     }
+
 }

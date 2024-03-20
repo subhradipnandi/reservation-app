@@ -21,10 +21,10 @@ public class Passenger {
     private String email;
     private long mobile;
 
-    @Column(name = "bus_id", unique = true)
+    @Column(name = "bus_id")
     private long busId;
 
-    @Column(name = "route_id", unique = true)
+    @Column(name = "route_id")
     private long routeId;
 //    private long subRouteId;
 
